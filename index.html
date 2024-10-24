@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>SheCare - Women Safety App</title>
+</head>
+<body>
+    <header>
+        <h1>SheCare</h1>
+        <p>Your Safety, Our Priority</p>
+    </header>
+
+    <main>
+        <section id="emergency">
+            <h2>Emergency Contacts</h2>
+            <button id="callHelp">Call for Help</button>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Send SOS message with location</li>
+                <li>Alert family and friends</li>
+                <li>Track real-time location</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 SheCare. Stay Safe, Stay Secure.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    
+</body>
+</html>
